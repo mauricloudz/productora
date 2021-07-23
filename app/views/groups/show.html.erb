@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center mt-5">Group Details</h1>
+
+<ul class="list-group mt-5">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Name
+    <span class="badge badge-primary badge-pill"><%= @group.name %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Debut Date
+    <span class="badge badge-primary badge-pill"><%= @group.debut_date %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Group Type
+    <span class="badge badge-primary badge-pill"><%= @group.group_type %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Cast
+    <span class="badge badge-primary badge-pill"><%= @group.cast %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Concerts this month
+    <span class="badge badge-primary badge-pill"><%= @group.concertThisMonth %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Last Concert
+    <span class="badge badge-primary badge-pill"><%= @group.lastConcert %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Max Attendance
+    <span class="badge badge-primary badge-pill"><%= @group.maxAttendance %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Longest Concert
+    <span class="badge badge-primary badge-pill"><%= @group.longestConcert %> Hour</span>
+  </li>
+</ul>
+
+<div class="text-center mt-5">
+  <%= link_to 'Edit Info', edit_group_path(@group), :class => "btn btn-primary"%> 
+  <%= link_to 'Back to list', groups_path, :class => "btn btn-primary" %>
+</div>

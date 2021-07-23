@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1 class="text-center mt-5">Concert Details</h1>
+
+<ul class="list-group mt-5">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Date
+    <span class="badge badge-primary badge-pill"><%= @concert.date %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Duration
+    <span class="badge badge-primary badge-pill"><%= @concert.duration %> Hour</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Location
+    <span class="badge badge-primary badge-pill"><%= @concert.location %></span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Attendance
+    <span class="badge badge-primary badge-pill"><%= @concert.attendance %></span>
+  </li>
+</ul>
+
+<div class="text-center mt-5">
+  <%= link_to 'Edit Info', edit_concert_path(@concert), :class => "btn btn-primary"%> 
+  <%= link_to 'Back to list', concerts_path, :class => "btn btn-primary" %>
+</div>

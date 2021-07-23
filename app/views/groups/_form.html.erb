@@ -1,0 +1,37 @@
+<%= form_with(model: group, local: true) do |form| %>
+  <% if group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, :class => "form-control" %>
+  </div>
+
+  <div class="form-group row mlunset">
+    <%= form.label :debut_date, :class => "col-sm-3 col-form-label" %>
+    <%= form.date_select :debut_date, {}, :class => "col-sm-3 form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :group_type %>
+    <%= form.select :group_type, options_for_select(Group.group_types.keys), {}, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cast %>
+    <%= form.number_field :cast, :class => "form-control" %>
+  </div>
+
+  <div class="actions text-center mt-5">
+    <%= form.submit 'Update', class: 'btn btn-primary' %>
+  </div>
+<% end %>

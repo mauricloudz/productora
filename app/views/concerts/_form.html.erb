@@ -1,0 +1,44 @@
+<%= form_with(model: concert, local: true) do |form| %>
+  <% if concert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(concert.errors.count, "error") %> prohibited this concert from being saved:</h2>
+
+      <ul>
+      <% concert.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="form-group row mlunset">
+    <%= form.label :date, :class => "col-sm-3 col-form-label" %>
+    <%= form.date_select :date, {}, :class => "col-sm-3 form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :duration %>
+    <%= form.number_field :duration, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :location %>
+    <%= form.text_field :location, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :attendance %>
+    <%= form.number_field :attendance, :class => "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "Select Group" %>
+    <%= form.select :group_id, options_for_select(Group.pluck :name, :id), {}, :class => "form-control" %>
+  </div>
+
+  <div class="actions text-center mt-5">
+    <%= form.submit 'Update', class: 'btn btn-primary' %>
+  </div>
+
+<% end %>
